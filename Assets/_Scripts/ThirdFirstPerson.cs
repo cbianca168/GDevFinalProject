@@ -431,11 +431,11 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                //CreateRippleStep();
-                //Debug.Log("playing foot step ps");
+                CreateRippleStep();
+                Debug.Log("playing foot step ps");
 
-                RippleDecal rippleDecal = gameObject.GetComponent<RippleDecal>();
-                rippleDecal.OnStep();
+                //RippleDecal rippleDecal = gameObject.GetComponent<RippleDecal>();
+                //rippleDecal.OnStep();
 
                 if (FootstepAudioClips.Length > 0)
                 {

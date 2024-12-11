@@ -7,7 +7,7 @@ public class RippleDecal : MonoBehaviour
 {
     public GameObject decalPrefab; // Assign your decal prefab here
     public float decalDuration = 1f; // How long the decal should stay
-    private float expandSpeed = 4f; // How fast it expands
+    private float expandSpeed = 7f; // How fast it expands
     //[SerializeField] private float fadeDuration = 1.0f;
 
 
@@ -24,7 +24,7 @@ public class RippleDecal : MonoBehaviour
         DecalProjector projector = decal.GetComponent<DecalProjector>();
         float currentSize = 0.1f; // Initial size
 
-        while (currentSize < 10f) // Set your max size here
+        while (currentSize < 50f) // Set your max size here
         {
             
             currentSize += expandSpeed * Time.deltaTime;

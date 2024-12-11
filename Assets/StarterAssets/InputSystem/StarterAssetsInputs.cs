@@ -43,10 +43,21 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+        
+		// C. Added input for seismic stomp decal projector
+		public void OnSeismicStomp(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                SeismicStomp();
+            }
+        }
+
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -75,6 +86,14 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+
+		// C. calling the seismic stomp ripple decal script from here.
+		private void SeismicStomp()
+		{
+            RippleDecal rippleDecal = gameObject.GetComponent<RippleDecal>();
+            rippleDecal.OnStep();
+        }
+
 	}
 	
 }
