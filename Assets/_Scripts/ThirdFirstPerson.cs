@@ -24,10 +24,10 @@ namespace StarterAssets
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
 
-        // C. Original 3rd Person Rotation variable. Keeping it because it's used in the Move() function
-        [Tooltip("How fast the character turns to face movement direction")]
+        // C. Original 3rd Person Rotation variable.
+        /*[Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
-        public float RotationSmoothTime = 0.12f;
+        public float RotationSmoothTime = 0.12f;*/
 
         // C. 1st Person Rotation variable
         [Tooltip("Rotation speed of the character")]
@@ -99,7 +99,7 @@ namespace StarterAssets
         // player
         private float _speed;
         private float _animationBlend;
-        private float _targetRotation = 0.0f;
+        //private float _targetRotation = 0.0f;
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
@@ -431,8 +431,11 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                CreateRippleStep();
-                Debug.Log("playing foot step ps");
+                //CreateRippleStep();
+                //Debug.Log("playing foot step ps");
+
+                RippleDecal rippleDecal = gameObject.GetComponent<RippleDecal>();
+                rippleDecal.OnStep();
 
                 if (FootstepAudioClips.Length > 0)
                 {
@@ -447,6 +450,7 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                
             }
         }
 
