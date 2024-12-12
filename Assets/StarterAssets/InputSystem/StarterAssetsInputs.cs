@@ -43,10 +43,32 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+        
+		// C. Added input for seismic stomp decal projector
+		public void OnSeismicStomp(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                SeismicStomp();
+				//Debug.Log("OnSeismicStomp Called");
+            }
+        }
+
+		//C. Added input for sonar screem shader graph
+		public void OnSonarScreem(InputValue value)
+		{
+			if (value.isPressed)
+			{
+				SonarScreem();
+				//Debug.Log("OnSonarScreem called");
+			}
+		}
+
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -75,6 +97,27 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+
+		// C. calling the seismic stomp ripple decal script from here.
+		private void SeismicStomp()
+		{
+            RippleDecal rippleDecal = gameObject.GetComponent<RippleDecal>();
+            rippleDecal.OnStep();
+			//Debug.Log("SeismicStomp called");
+        }
+
+		// C. calling the sonar screem script from here.
+		private void SonarScreem()
+		{
+			Sonar sonar = gameObject.GetComponent<Sonar>();
+			sonar.TriggerSonarEffect();
+			Debug.Log("SonarScreem Called");
+
+			sonar.WaitAndDoSomething();
+			Debug.Log("WaitFunction is Called");
+
+		}
+
 	}
 	
 }
