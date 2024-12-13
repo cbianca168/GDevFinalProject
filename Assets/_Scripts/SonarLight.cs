@@ -8,9 +8,18 @@ public class SonarLight : MonoBehaviour
     public GameObject echoLightPrefab;
     private float fadeDuration = 1f;  // Time to fade in/out
     private float maxIntensity = 50f;  // Maximum light intensity
+    private LightCollision lightCollision;
+    // damaging effects
+    /*public int damageAmount = 100;      // Damage dealt to enemies
+    public float lightDuration = 3f;     // Time before light destroys itself
+    public Light pointLight;             // Reference to the Light component
+    private float damageCheckInterval = 0.2f; // How often to check for enemies in range
+    private float nextDamageTime;*/
 
-   
-
+   void Start()
+    {
+        lightCollision = FindObjectOfType<LightCollision>();
+    }
 
     public void ActivateLightEffect(Vector3 position)
     {
@@ -23,8 +32,7 @@ public class SonarLight : MonoBehaviour
         StartCoroutine(FadeLightInOut(lightObject));
     }
 
-
-
+    
 
     private IEnumerator FadeLightInOut(GameObject lightObject)
     {
@@ -61,4 +69,6 @@ public class SonarLight : MonoBehaviour
             Destroy(lightObject);
         }
     }
+
+    
 }

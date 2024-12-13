@@ -432,7 +432,7 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 CreateRippleStep();
-                Debug.Log("playing foot step ps");
+                //Debug.Log("playing foot step ps");
 
                 //RippleDecal rippleDecal = gameObject.GetComponent<RippleDecal>();
                 //rippleDecal.OnStep();
