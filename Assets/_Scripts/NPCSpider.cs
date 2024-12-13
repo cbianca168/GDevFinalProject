@@ -14,16 +14,31 @@ public class NPCSpider : MonoBehaviour
     public Transform goal;
     private bool playerInZone = false;
 
+    // animation
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerInZone)
+        {
+            FollowPlayer();
+        }
+        else
+        {
+            // Choose the next destination point when the agent gets
+            // close to the current one.
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                GotoNextPoint();
+        }
     }
 
     void GotoNextPoint()
@@ -34,6 +49,12 @@ public class NPCSpider : MonoBehaviour
 
         // Set the agent to go to the currently selected destination.
         agent.destination = points[destPoint].position;
+        //animator.SetBool("isWalking", true);
+
+        if (transform.position == points[destPoint].position)
+        {
+            //animator.SetBool("isWalking", false);
+        }
 
         // This the sample code from the original Unity Manual. 
         // Choose the next point in the array as the destination,
@@ -45,6 +66,12 @@ public class NPCSpider : MonoBehaviour
     void FollowPlayer()
     {
         agent.destination = goal.position;
+        animator.SetBool("isWalking", true);
+
+        if (transform.position ==  goal.position)
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     public void SetPlayerInZone(bool inZone)
