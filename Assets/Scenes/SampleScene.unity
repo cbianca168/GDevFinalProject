@@ -34471,6 +34471,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3722114732237000909}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &1433328430 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 9191967229839084144, guid: 012f432478cfb2c4a8dee34a0409c8df,
+    type: 3}
+  m_PrefabInstance: {fileID: 3722114732237000909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1436360166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48645,7 +48651,7 @@ Transform:
   m_GameObject: {fileID: 974238577885240489}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.47, y: 11.954, z: 3.32}
+  m_LocalPosition: {x: -82.3, y: 11.954, z: 34.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49752,7 +49758,7 @@ Transform:
   m_GameObject: {fileID: 3203261900137697150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.47, y: 13.579, z: 3.32}
+  m_LocalPosition: {x: -82.3, y: 13.579, z: 34.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50919,7 +50925,7 @@ Transform:
   m_GameObject: {fileID: 5542111179460453803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.47, y: 13.579, z: 3.32}
+  m_LocalPosition: {x: -82.3, y: 13.579, z: 34.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51784,6 +51790,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   echoLightPrefab: {fileID: 1433328428}
+  damageAmount: 100
+  lightDuration: 3
+  pointLight: {fileID: 1433328430}
 --- !u!114 &7018120647665464926
 MonoBehaviour:
   m_ObjectHideFlags: 0
