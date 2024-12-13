@@ -6,6 +6,7 @@ public class PlayerHeath : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
+    public GameObject gameOverScreen;
 
     
     void Start()
@@ -35,6 +36,7 @@ public class PlayerHeath : MonoBehaviour
     void Die()
     {
         Debug.Log("Player has died!");
+        gameOverScreen.SetActive(true);
         gameObject.SetActive(false);
         //Destroy(gameObject);
     }
