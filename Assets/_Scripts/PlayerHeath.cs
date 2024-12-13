@@ -6,11 +6,21 @@ public class PlayerHeath : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
+
+    
     void Start()
     {
         currentHealth = maxHealth; 
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            TakeDamage(maxHealth);
+        }
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -25,6 +35,7 @@ public class PlayerHeath : MonoBehaviour
     void Die()
     {
         Debug.Log("Player has died!");
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }
