@@ -116,7 +116,11 @@ namespace StarterAssets
 			sonar.WaitAndDoSomething();
 			Debug.Log("WaitFunction is Called");
 
-		}
+            LightCollision lightCollision = gameObject.GetComponent<LightCollision>();
+			lightCollision.ActivateCollision(transform.position);
+			Debug.Log("ActivateCollision called");
+
+        }
 
 	}
 	
